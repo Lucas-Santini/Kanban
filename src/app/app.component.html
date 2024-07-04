@@ -1,0 +1,70 @@
+<div class="kanban-container">
+    <div class="column" pDroppable (onDrop)="drop('availableTasks')">
+        <p class="column-title">
+            A fazer
+        </p>
+        <div class="column-content">
+            <ul class="list-none flex flex-column gap-2 p-0 m-0">
+                <li 
+                    *ngFor="let tarefa of availableTasks"
+                    class="card" 
+                    pDraggable 
+                    (onDragStart)="dragStart(tarefa, 'availableTasks')" 
+                    (onDragEnd)="dragEnd()">
+                        {{tarefa.name}}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="column" pDroppable (onDrop)="drop('inProgressTasks')">
+        <p class="column-title">
+            Em progresso
+        </p>
+        <div class="column-content">
+            <ul class="list-none flex flex-column gap-2 p-0 m-0">
+                <li 
+                    *ngFor="let tarefa of inProgressTasks"
+                    class="card" 
+                    pDraggable 
+                    (onDragStart)="dragStart(tarefa, 'inProgressTasks')" 
+                    (onDragEnd)="dragEnd()">
+                        {{tarefa.name}}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="column" pDroppable (onDrop)="drop('testingTasks')">
+        <p class="column-title">
+            Em homologação
+        </p>
+        <div class="column-content">
+            <ul class="list-none flex flex-column gap-2 p-0 m-0">
+                <li 
+                    *ngFor="let tarefa of testingTasks"
+                    class="card" 
+                    pDraggable 
+                    (onDragStart)="dragStart(tarefa, 'testingTasks')" 
+                    (onDragEnd)="dragEnd()">
+                        {{tarefa.name}}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="column" pDroppable (onDrop)="drop('completedTasks')">
+        <p class="column-title">
+            Concluído
+        </p>
+        <div class="column-content">
+            <ul class="list-none flex flex-column gap-2 p-0 m-0">
+                <li 
+                    *ngFor="let tarefa of completedTasks"
+                    class="card" 
+                    pDraggable 
+                    (onDragStart)="dragStart(tarefa, 'completedTasks')" 
+                    (onDragEnd)="dragEnd()">
+                        {{tarefa.name}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
